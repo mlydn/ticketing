@@ -3,9 +3,9 @@ kind: Ingress
 metadata:
   name: ingress-service
   annotations:
-    spec.ingressClassName: nginx
     nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
+  ingressClassName: nginx
   rules:
     - host: ticketing.dev
       http:
