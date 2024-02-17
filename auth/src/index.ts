@@ -1,12 +1,17 @@
 import express from 'express'
 import { json } from 'body-parser'
+import { currentUserRouter } from './routes/currentuser'
+import { signupRouter } from './routes/signup'
+import { signinRouter } from './routes/signin'
+import { signoutRouter } from './routes/signout'
 
 const app = express()
 app.use(json())
 
-app.get('/api/users/currentuser', (req, res) => {
-  res.send('Fit like?')
-})
+app.use(currentUserRouter)
+app.use(signupRouter)
+app.use(signinRouter)
+app.use(signoutRouter)
 
 app.listen(3000, () => {
   console.log('Auth listening on 3000!')
