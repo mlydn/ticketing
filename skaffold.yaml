@@ -5,10 +5,12 @@ deploy:
     manifests:
       - ./infra/k8s/*
 build:
-  local:
-    push: false
+  # local:
+  #   push: false
+  googleCloudBuild:
+    projectId: regal-cider-414414
   artifacts:
-    - image: mlydn/auth
+    - image: gcr.io/regal-cider-414414/auth
       context: auth
       docker:
         dockerfile: Dockerfile
