@@ -13,7 +13,10 @@ router.post(
   '/api/users/signin',
   [
     body('email').isEmail().withMessage('Email must be valid'),
-    body('password').trim().notEmpty().withMessage('You must supply a password'),
+    body('password')
+      .trim()
+      .notEmpty()
+      .withMessage('You must supply a password'),
   ],
   validateRequest,
   async (req: Request, res: Response) => {
@@ -24,7 +27,10 @@ router.post(
       throw new BadRequestError('Invalid credentials')
     }
 
-    const passwordsMatch = await Password.compare(existingUser.password, password)
+    const passwordsMatch = await Password.compare(
+      existingUser.password,
+      password
+    )
 
     if (!passwordsMatch) {
       throw new BadRequestError('Invalid credentials')
@@ -39,11 +45,11 @@ router.post(
       process.env.JWT_KEY!
     )
 
-    console.log(userJwt)
     // Store on session object
     req.session = {
       jwt: userJwt,
     }
+    console.log(req.session)
 
     res.status(200).send(existingUser)
   }
