@@ -49,7 +49,6 @@ router.post(
     req.session = {
       jwt: userJwt,
     }
-    console.log(req.session)
 
     res.status(200).send(existingUser)
   }
