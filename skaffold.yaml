@@ -6,7 +6,7 @@ deploy:
       - ./infra/k8s/*
 build:
   # local:
-  #   push: false
+  #   push: true
   googleCloudBuild:
     projectId: regal-cider-414414
   artifacts:
@@ -17,4 +17,12 @@ build:
       sync:
         manual:
           - src: 'src/**/*.ts'
+            dest: .
+    - image: gcr.io/regal-cider-414414/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
             dest: .
