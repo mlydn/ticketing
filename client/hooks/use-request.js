@@ -14,14 +14,16 @@ export default ({ url, method, body, onSuccess }) => {
       }
 
       return response.data
-    } catch (error) {
+    } catch (err) {
       setErrors(
         <div className='alert alert-danger'>
           <h4>Oops....</h4>
           <ul className='my-0'>
-            {error.response.data.errors.map(err => <li key={err.message}>{err.message}</li>)}
+            {err.response.data.errors.map(err => (
+              <li key={err.message}>{err.message}</li>
+            ))}
           </ul>
-      </div>
+        </div>
       )
     }
   }
