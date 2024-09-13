@@ -1,4 +1,6 @@
 # Dependency directories
 node_modules/
-
+nats-test
+common
 .prettierrc
+conf.sh
