@@ -1,33 +1,33 @@
-import { Listener, OrderCreatedEvent, Subjects } from '@kaartjes/common'
-import { Message } from 'node-nats-streaming'
+import { Listener, OrderCancelledEvent, Subjects } from '@kaartjes/common'
 import { queueGroupName } from './queue-group-name'
+import { Message } from 'node-nats-streaming'
 import { Ticket } from '../../models/ticket'
 import { TicketUpdatedPublisher } from '../publishers/ticket-updated-publisher'
 
-export class OrderCreatedListener extends Listener<OrderCreatedEvent> {
-  subject: Subjects.OrderCreated = Subjects.OrderCreated
+export class OrderCancelledListener extends Listener<OrderCancelledEvent> {
+  subject: Subjects.OrderCancelled = Subjects.OrderCancelled
   queueGroupName = queueGroupName
-  async onMessage(data: OrderCreatedEvent['data'], msg: Message) {
+
+  async onMessage(data: OrderCancelledEvent['data'], msg: Message) {
     // Find ticket
     const ticket = await Ticket.findById(data.ticket.id)
 
-    // Throw error if not found
     if (!ticket) {
       throw new Error('Ticket not found')
     }
 
-    // Update ticket
-    ticket.set({ orderId: data.id })
-
-    // Save ticket
+    // update orderId
+    ticket.set({ orderId: undefined })
     await ticket.save()
+
+    // Publish updated event
     await new TicketUpdatedPublisher(this.client).publish({
       id: ticket.id,
-      price: ticket.price,
+      version: ticket.version,
       title: ticket.title,
+      price: ticket.price,
       userId: ticket.userId,
       orderId: ticket.orderId,
-      version: ticket.version,
     })
 
     // Acknowledge message
