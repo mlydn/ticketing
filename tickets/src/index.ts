@@ -43,7 +43,7 @@ const start = async () => {
   }
 
   app.listen(3000, () => {
-    console.log('Auth listening on 3000!')
+    console.log('Ticketing listening on 3000!')
   })
 }
 
