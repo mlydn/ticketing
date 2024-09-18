@@ -8,6 +8,7 @@ import {
   NotAuthorisedError,
   OrderStatus,
 } from '@kaartjes/common'
+import { stripe } from '../stripe'
 import { Order } from '../models/order'
 
 const router = express.Router()
@@ -31,7 +32,14 @@ router.post(
     if (order.status === OrderStatus.Cancelled) {
       throw new BadRequestError('Cannot accept payment for cancelled order')
     }
-    res.send({ success: true })
+
+    await stripe.charges.create({
+      currency: 'eur',
+      amount: order.price * 100,
+      source: token,
+    })
+
+    res.status(201).send({ success: true })
   }
 )
 
