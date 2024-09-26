@@ -1,0 +1,577 @@
+addonsConfig:
+  dnsCacheConfig:
+    enabled: true
+  gcePersistentDiskCsiDriverConfig:
+    enabled: true
+  gcpFilestoreCsiDriverConfig:
+    enabled: true
+  gcsFuseCsiDriverConfig:
+    enabled: true
+  horizontalPodAutoscaling: {}
+  httpLoadBalancing: {}
+  kubernetesDashboard:
+    disabled: true
+  networkPolicyConfig:
+    disabled: true
+authenticatorGroupsConfig: {}
+autopilot:
+  enabled: true
+autoscaling:
+  autoprovisioningNodePoolDefaults:
+    imageType: COS_CONTAINERD
+    management:
+      autoRepair: true
+      autoUpgrade: true
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    serviceAccount: default
+    upgradeSettings:
+      maxSurge: 1
+      strategy: SURGE
+  autoscalingProfile: OPTIMIZE_UTILIZATION
+  enableNodeAutoprovisioning: true
+  resourceLimits:
+  - maximum: '1000000000'
+    resourceType: cpu
+  - maximum: '1000000000'
+    resourceType: memory
+  - maximum: '1000000000'
+    resourceType: nvidia-tesla-t4
+  - maximum: '1000000000'
+    resourceType: nvidia-tesla-a100
+binaryAuthorization:
+  evaluationMode: DISABLED
+clusterIpv4Cidr: 10.74.128.0/17
+createTime: '2024-02-15T14:39:28+00:00'
+currentMasterVersion: 1.27.8-gke.1067004
+currentNodeCount: 2
+currentNodeVersion: 1.27.8-gke.1067004
+databaseEncryption:
+  state: DECRYPTED
+defaultMaxPodsConstraint:
+  maxPodsPerNode: '110'
+endpoint: 34.88.223.195
+enterpriseConfig:
+  clusterTier: STANDARD
+etag: d88041d9-018e-4ff1-8aae-23f145b9da97
+id: 4cf6b2acd4334a729a8aa94101f0be590973eb5a92234bdeb8f2a13c70f77967
+initialClusterVersion: 1.27.8-gke.1067004
+instanceGroupUrls:
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-default-pool-501b87e5-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-b/instanceGroupManagers/gk3-ticketing-dev-pool-1-a0e92475-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-c/instanceGroupManagers/gk3-ticketing-dev-pool-1-97251c07-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-pool-1-7c294b10-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-b/instanceGroupManagers/gk3-ticketing-dev-pool-2-0efe919f-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-c/instanceGroupManagers/gk3-ticketing-dev-pool-2-11183ad9-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-pool-2-47ed216a-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-b/instanceGroupManagers/gk3-ticketing-dev-pool-3-3e6d580b-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-c/instanceGroupManagers/gk3-ticketing-dev-pool-3-52569eeb-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-pool-3-c10f3fca-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-b/instanceGroupManagers/gk3-ticketing-dev-pool-4-6fea1b28-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-c/instanceGroupManagers/gk3-ticketing-dev-pool-4-a72382a9-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-pool-4-ec09a04a-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-b/instanceGroupManagers/gk3-ticketing-dev-pool-5-17d73714-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-c/instanceGroupManagers/gk3-ticketing-dev-pool-5-73a7fdb5-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-pool-5-ea74dea8-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-b/instanceGroupManagers/gk3-ticketing-dev-pool-6-ced4c05a-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-c/instanceGroupManagers/gk3-ticketing-dev-pool-6-70d5fa9f-grp
+- https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-pool-6-924ca898-grp
+ipAllocationPolicy:
+  clusterIpv4Cidr: 10.74.128.0/17
+  clusterIpv4CidrBlock: 10.74.128.0/17
+  clusterSecondaryRangeName: gke-ticketing-dev-pods-4cf6b2ac
+  defaultPodIpv4RangeUtilization: 0.0156
+  podCidrOverprovisionConfig: {}
+  servicesIpv4Cidr: 34.118.224.0/20
+  servicesIpv4CidrBlock: 34.118.224.0/20
+  stackType: IPV4
+  useIpAliases: true
+labelFingerprint: a9dc16a7
+legacyAbac: {}
+location: europe-north1
+locations:
+- europe-north1-b
+- europe-north1-c
+- europe-north1-a
+loggingConfig:
+  componentConfig:
+    enableComponents:
+    - SYSTEM_COMPONENTS
+    - WORKLOADS
+loggingService: logging.googleapis.com/kubernetes
+maintenancePolicy:
+  resourceVersion: e3b0c442
+masterAuth:
+  clusterCaCertificate: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMRENDQXBTZ0F3SUJBZ0lRU0JmWnNiZUdHR21jYmtwUlpCWUdMREFOQmdrcWhraUc5dzBCQVFzRkFEQXYKTVMwd0t3WURWUVFERXlSaFl6UmlaalJsT0MwNU5ETXpMVFJrWmpNdFlqazBZaTAyWWpJME9UTXpNVEF5Tm1VdwpJQmNOTWpRd01qRTFNVE16T1RNd1doZ1BNakExTkRBeU1EY3hORE01TXpCYU1DOHhMVEFyQmdOVkJBTVRKR0ZqCk5HSm1OR1U0TFRrME16TXROR1JtTXkxaU9UUmlMVFppTWpRNU16TXhNREkyWlRDQ0FhSXdEUVlKS29aSWh2Y04KQVFFQkJRQURnZ0dQQURDQ0FZb0NnZ0dCQUlZNTIvQnF0SjltVmo3R2ZhMnBSemlHVEQ4a3FTZ2F2V1E5aysxeAptckdRaUQ0a0NNaE9WNDJ1b2JFK21wUDkya0xhdGZZVTBpNDJpd3g2V21OUWVKak5nQXEzUXFNaTFzemdFMG1WClNxMTgyMDJVV29jM1VrM3R1TXNnRjF6UGlzbHNBTXVmOUNqODF2RGZTVkY4cFpzekc1akJmWVRjS1NEekNabzgKa01OVGV1bisxc1ZUMnFER0t2WndZZktnaGl3SndOTHFiTW5tY01tbVFJTUxib2YwVmZ3Z2pIM2hpR3lnQ0JGUApMK2pnQ3YvcnJmU2FCbDlPSkdlSDFrVzQ1dk95WUp5NnhzdmQ2emZ5bEJDL21PVEprTXhVRFVEUjA3M2VRUld3Clc0WW9kbWgzemU4cEtmYnBiYlNqNkFDOGg2ZWh4TTZLUFBybkVHa2ZRbmtZM3ZOQlAvRk51cThSbWNoZHUvYkwKWkFXWDA5aFdGTEVwTFhuRDRoUlpsamtManpGOGZUZEt0cDVBSXJPQkJudXVMbEp5a3M4VkcwV1J0MEVoZGFWdApldEFFZ3hkc2hlUSt3eFZxb0JvUTYwUnk2K0xsanFSSmF1UkNVOWszUmM2RDd6UmZETUNSZGlpZUdqdEpKUTlsCmRjVHl5WUtpQ09oNGFlazc1enV4d0xqRFFRSURBUUFCbzBJd1FEQU9CZ05WSFE4QkFmOEVCQU1DQWdRd0R3WUQKVlIwVEFRSC9CQVV3QXdFQi96QWRCZ05WSFE0RUZnUVVoeGV4OG1jc3BEVDJvcDBkVjJjeVYyWVpGT0F3RFFZSgpLb1pJaHZjTkFRRUxCUUFEZ2dHQkFGYWdHSnVFVDVKYzA3RXZrMFV6STNzNDVrTStlMUVaa2dldmNrdmp3a1JQCm9sbjRNUnVZYlBzR3YvYjE0SDEzWEhCdms3RkVML1dLb25YOHk1UU1WYXNzbUxhR1MwL3VBNlVHb21SRFAxYm4KR3F6MWFkTGxGK1RBczFVb2VVZlUxSGxvRVFsbjdoTkRFeGorUkViWWVjQVNmd0ZnNUg3R0d4MFVxVmxHdmhHNwpKVktLNEcxcnQ5NFpmZ0RjQURxWVpPNFRmZFR4UE9PT0kzNEdvTk5sdWFwT3g2SXpnYnc2OEVZVm1qN29jL0VGCkU0Zmc2aTRJTjFURnZ6NFRoMXJYVmNTT2dmUEJ0eUtYR2V3ZW82QStqd0ZCK0lPNk8zUzhYNlhqRklGTGo3TWIKQm5SenlIMjUwTmw2SytFYlZwL2pXbjVhZi8yRkRBTm1zbFdWRHlSUkFudG9QZ29nOW9JYTJtblRCb0FHSjY4cgpCeFQwTjFYeCszZXdrS0NlWnUrbjhNSHlrSkRrYkFKOFFJaTU0T2Z0UzU0dXRCendVamdIWGF0M05LRWEvaHQ0Ck9JVFpyZDRzMmt5cEd4T0hCZ21taDloY0tNSzNuUkovVzMrMkdncElicWl2bThiaTAyeHp3QllGK1Z0MklIekcKUkRMdTc3bHBBK04vSGpVYUpaeGNzdz09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+masterAuthorizedNetworksConfig:
+  gcpPublicCidrsAccessEnabled: true
+monitoringConfig:
+  advancedDatapathObservabilityConfig:
+    enableMetrics: true
+  componentConfig:
+    enableComponents:
+    - SYSTEM_COMPONENTS
+    - STORAGE
+    - POD
+    - DEPLOYMENT
+    - STATEFULSET
+    - DAEMONSET
+    - HPA
+  managedPrometheusConfig:
+    enabled: true
+monitoringService: monitoring.googleapis.com/kubernetes
+name: ticketing-dev
+network: default
+networkConfig:
+  datapathProvider: ADVANCED_DATAPATH
+  defaultSnatStatus: {}
+  dnsConfig:
+    clusterDns: CLOUD_DNS
+    clusterDnsDomain: cluster.local
+    clusterDnsScope: CLUSTER_SCOPE
+  enableIntraNodeVisibility: true
+  gatewayApiConfig:
+    channel: CHANNEL_STANDARD
+  network: projects/regal-cider-414414/global/networks/default
+  serviceExternalIpsConfig: {}
+  subnetwork: projects/regal-cider-414414/regions/europe-north1/subnetworks/default
+nodeConfig:
+  diskSizeGb: 100
+  diskType: pd-balanced
+  imageType: COS_CONTAINERD
+  machineType: e2-small
+  metadata:
+    disable-legacy-endpoints: 'true'
+  oauthScopes:
+  - https://www.googleapis.com/auth/devstorage.read_only
+  - https://www.googleapis.com/auth/logging.write
+  - https://www.googleapis.com/auth/monitoring
+  - https://www.googleapis.com/auth/service.management.readonly
+  - https://www.googleapis.com/auth/servicecontrol
+  - https://www.googleapis.com/auth/trace.append
+  reservationAffinity:
+    consumeReservationType: NO_RESERVATION
+  serviceAccount: default
+  shieldedInstanceConfig:
+    enableIntegrityMonitoring: true
+    enableSecureBoot: true
+  taints:
+  - effect: NO_SCHEDULE
+    key: cloud.google.com/gke-quick-remove
+    value: 'true'
+  windowsNodeConfig: {}
+  workloadMetadataConfig:
+    mode: GKE_METADATA
+nodePoolDefaults:
+  nodeConfigDefaults:
+    gcfsConfig:
+      enabled: true
+    loggingConfig:
+      variantConfig:
+        variant: DEFAULT
+nodePools:
+- autoscaling:
+    enabled: true
+    locationPolicy: BALANCED
+    maxNodeCount: 1000
+  config:
+    diskSizeGb: 100
+    diskType: pd-balanced
+    imageType: COS_CONTAINERD
+    machineType: e2-small
+    metadata:
+      disable-legacy-endpoints: 'true'
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    reservationAffinity:
+      consumeReservationType: NO_RESERVATION
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
+    taints:
+    - effect: NO_SCHEDULE
+      key: cloud.google.com/gke-quick-remove
+      value: 'true'
+    windowsNodeConfig: {}
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+  etag: 974b2ee8-7dc3-4e20-86cc-285bb8520103
+  initialNodeCount: 1
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-default-pool-501b87e5-grp
+  locations:
+  - europe-north1-a
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  maxPodsConstraint:
+    maxPodsPerNode: '32'
+  name: default-pool
+  networkConfig:
+    enablePrivateNodes: false
+    podIpv4CidrBlock: 10.74.128.0/17
+    podIpv4RangeUtilization: 0.0156
+    podRange: gke-ticketing-dev-pods-4cf6b2ac
+  podIpv4CidrSize: 26
+  selfLink: https://container.googleapis.com/v1/projects/regal-cider-414414/locations/europe-north1/clusters/ticketing-dev/nodePools/default-pool
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.27.8-gke.1067004
+- autoscaling:
+    enabled: true
+    locationPolicy: BALANCED
+    maxNodeCount: 1000
+  config:
+    diskSizeGb: 100
+    diskType: pd-balanced
+    imageType: COS_CONTAINERD
+    machineType: e2-medium
+    metadata:
+      disable-legacy-endpoints: 'true'
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    reservationAffinity:
+      consumeReservationType: NO_RESERVATION
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
+    windowsNodeConfig: {}
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+  etag: f8971108-39d2-4391-9687-8011282281e4
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-b/instanceGroupManagers/gk3-ticketing-dev-pool-1-a0e92475-grp
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-c/instanceGroupManagers/gk3-ticketing-dev-pool-1-97251c07-grp
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-pool-1-7c294b10-grp
+  locations:
+  - europe-north1-b
+  - europe-north1-c
+  - europe-north1-a
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  maxPodsConstraint:
+    maxPodsPerNode: '32'
+  name: pool-1
+  networkConfig:
+    enablePrivateNodes: false
+    podIpv4CidrBlock: 10.74.128.0/17
+    podIpv4RangeUtilization: 0.0156
+    podRange: gke-ticketing-dev-pods-4cf6b2ac
+  podIpv4CidrSize: 26
+  selfLink: https://container.googleapis.com/v1/projects/regal-cider-414414/locations/europe-north1/clusters/ticketing-dev/nodePools/pool-1
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.27.8-gke.1067004
+- autoscaling:
+    enabled: true
+    locationPolicy: BALANCED
+    maxNodeCount: 1000
+  config:
+    diskSizeGb: 100
+    diskType: pd-balanced
+    imageType: COS_CONTAINERD
+    machineType: e2-standard-2
+    metadata:
+      disable-legacy-endpoints: 'true'
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    reservationAffinity:
+      consumeReservationType: NO_RESERVATION
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
+    windowsNodeConfig: {}
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+  etag: d7a36655-7a4e-43ee-a1df-700194d377cc
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-b/instanceGroupManagers/gk3-ticketing-dev-pool-2-0efe919f-grp
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-c/instanceGroupManagers/gk3-ticketing-dev-pool-2-11183ad9-grp
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-pool-2-47ed216a-grp
+  locations:
+  - europe-north1-b
+  - europe-north1-c
+  - europe-north1-a
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  maxPodsConstraint:
+    maxPodsPerNode: '32'
+  name: pool-2
+  networkConfig:
+    enablePrivateNodes: false
+    podIpv4CidrBlock: 10.74.128.0/17
+    podIpv4RangeUtilization: 0.0156
+    podRange: gke-ticketing-dev-pods-4cf6b2ac
+  podIpv4CidrSize: 26
+  selfLink: https://container.googleapis.com/v1/projects/regal-cider-414414/locations/europe-north1/clusters/ticketing-dev/nodePools/pool-2
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.27.8-gke.1067004
+- autoscaling:
+    enabled: true
+    locationPolicy: BALANCED
+    maxNodeCount: 1000
+  config:
+    diskSizeGb: 100
+    diskType: pd-balanced
+    imageType: COS_CONTAINERD
+    machineType: e2-standard-4
+    metadata:
+      disable-legacy-endpoints: 'true'
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    reservationAffinity:
+      consumeReservationType: NO_RESERVATION
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
+    windowsNodeConfig: {}
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+  etag: 9b4b7646-dc8e-45b3-a145-10da0ca79a7c
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-b/instanceGroupManagers/gk3-ticketing-dev-pool-3-3e6d580b-grp
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-c/instanceGroupManagers/gk3-ticketing-dev-pool-3-52569eeb-grp
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-pool-3-c10f3fca-grp
+  locations:
+  - europe-north1-b
+  - europe-north1-c
+  - europe-north1-a
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  maxPodsConstraint:
+    maxPodsPerNode: '32'
+  name: pool-3
+  networkConfig:
+    enablePrivateNodes: false
+    podIpv4CidrBlock: 10.74.128.0/17
+    podIpv4RangeUtilization: 0.0156
+    podRange: gke-ticketing-dev-pods-4cf6b2ac
+  podIpv4CidrSize: 26
+  selfLink: https://container.googleapis.com/v1/projects/regal-cider-414414/locations/europe-north1/clusters/ticketing-dev/nodePools/pool-3
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.27.8-gke.1067004
+- autoscaling:
+    enabled: true
+    locationPolicy: BALANCED
+    maxNodeCount: 1000
+  config:
+    diskSizeGb: 100
+    diskType: pd-balanced
+    imageType: COS_CONTAINERD
+    machineType: e2-standard-8
+    metadata:
+      disable-legacy-endpoints: 'true'
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    reservationAffinity:
+      consumeReservationType: NO_RESERVATION
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
+    windowsNodeConfig: {}
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+  etag: bb09e16f-862d-4056-8b5c-944207dc1ae2
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-b/instanceGroupManagers/gk3-ticketing-dev-pool-4-6fea1b28-grp
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-c/instanceGroupManagers/gk3-ticketing-dev-pool-4-a72382a9-grp
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-pool-4-ec09a04a-grp
+  locations:
+  - europe-north1-b
+  - europe-north1-c
+  - europe-north1-a
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  maxPodsConstraint:
+    maxPodsPerNode: '32'
+  name: pool-4
+  networkConfig:
+    enablePrivateNodes: false
+    podIpv4CidrBlock: 10.74.128.0/17
+    podIpv4RangeUtilization: 0.0156
+    podRange: gke-ticketing-dev-pods-4cf6b2ac
+  podIpv4CidrSize: 26
+  selfLink: https://container.googleapis.com/v1/projects/regal-cider-414414/locations/europe-north1/clusters/ticketing-dev/nodePools/pool-4
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.27.8-gke.1067004
+- autoscaling:
+    enabled: true
+    locationPolicy: BALANCED
+    maxNodeCount: 1000
+  config:
+    diskSizeGb: 100
+    diskType: pd-balanced
+    imageType: COS_CONTAINERD
+    machineType: e2-standard-16
+    metadata:
+      disable-legacy-endpoints: 'true'
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    reservationAffinity:
+      consumeReservationType: NO_RESERVATION
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
+    windowsNodeConfig: {}
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+  etag: 1f8182e9-b7cf-418c-8f93-4b48879477e0
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-b/instanceGroupManagers/gk3-ticketing-dev-pool-5-17d73714-grp
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-c/instanceGroupManagers/gk3-ticketing-dev-pool-5-73a7fdb5-grp
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-pool-5-ea74dea8-grp
+  locations:
+  - europe-north1-b
+  - europe-north1-c
+  - europe-north1-a
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  maxPodsConstraint:
+    maxPodsPerNode: '32'
+  name: pool-5
+  networkConfig:
+    enablePrivateNodes: false
+    podIpv4CidrBlock: 10.74.128.0/17
+    podIpv4RangeUtilization: 0.0156
+    podRange: gke-ticketing-dev-pods-4cf6b2ac
+  podIpv4CidrSize: 26
+  selfLink: https://container.googleapis.com/v1/projects/regal-cider-414414/locations/europe-north1/clusters/ticketing-dev/nodePools/pool-5
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.27.8-gke.1067004
+- autoscaling:
+    enabled: true
+    locationPolicy: BALANCED
+    maxNodeCount: 1000
+  config:
+    diskSizeGb: 100
+    diskType: pd-balanced
+    imageType: COS_CONTAINERD
+    machineType: e2-standard-32
+    metadata:
+      disable-legacy-endpoints: 'true'
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    reservationAffinity:
+      consumeReservationType: NO_RESERVATION
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
+    windowsNodeConfig: {}
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+  etag: f3d70fbb-4d5d-4f52-8575-2c254c83656f
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-b/instanceGroupManagers/gk3-ticketing-dev-pool-6-ced4c05a-grp
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-c/instanceGroupManagers/gk3-ticketing-dev-pool-6-70d5fa9f-grp
+  - https://www.googleapis.com/compute/v1/projects/regal-cider-414414/zones/europe-north1-a/instanceGroupManagers/gk3-ticketing-dev-pool-6-924ca898-grp
+  locations:
+  - europe-north1-b
+  - europe-north1-c
+  - europe-north1-a
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  maxPodsConstraint:
+    maxPodsPerNode: '32'
+  name: pool-6
+  networkConfig:
+    enablePrivateNodes: false
+    podIpv4CidrBlock: 10.74.128.0/17
+    podIpv4RangeUtilization: 0.0156
+    podRange: gke-ticketing-dev-pods-4cf6b2ac
+  podIpv4CidrSize: 26
+  selfLink: https://container.googleapis.com/v1/projects/regal-cider-414414/locations/europe-north1/clusters/ticketing-dev/nodePools/pool-6
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.27.8-gke.1067004
+notificationConfig:
+  pubsub: {}
+privateClusterConfig:
+  privateEndpoint: 10.166.0.2
+  publicEndpoint: 34.88.223.195
+releaseChannel:
+  channel: REGULAR
+securityPostureConfig:
+  mode: BASIC
+  vulnerabilityMode: VULNERABILITY_BASIC
+selfLink: https://container.googleapis.com/v1/projects/regal-cider-414414/locations/europe-north1/clusters/ticketing-dev
+servicesIpv4Cidr: 34.118.224.0/20
+shieldedNodes:
+  enabled: true
+status: RECONCILING
+subnetwork: default
+verticalPodAutoscaling:
+  enabled: true
+workloadIdentityConfig:
+  workloadPool: regal-cider-414414.svc.id.goog
+zone: europe-north1
