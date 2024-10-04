@@ -5,12 +5,10 @@ deploy:
     manifests:
       - ./infra/k8s/*
 build:
-  # local:
-  #   push: true
-  googleCloudBuild:
-    projectId: regal-cider-414414
+  local:
+    push: false
   artifacts:
-    - image: gcr.io/regal-cider-414414/auth
+    - image: mlydn/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -18,7 +16,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: gcr.io/regal-cider-414414/client
+    - image: mlydn/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -26,8 +24,32 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: gcr.io/regal-cider-414414/tickets
+    - image: mlydn/tickets
       context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: mlydn/orders
+      context: orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: mlydn/expiration
+      context: expiration
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: mlydn/payments
+      context: payments
       docker:
         dockerfile: Dockerfile
       sync:
