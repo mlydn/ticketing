@@ -4,3 +4,4 @@ nats-test
 common
 .prettierrc
 conf.sh
+skaffold-local.yaml
